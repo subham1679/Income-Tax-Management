@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax Details</title>
+    </head>
+    <style>
+            body{
+                background-color:#a5cc82;
+            }
+    </style>
+    <body>
+        <form action="/tax_details" method="post">
+            <label for="date">Search by ITR date</label>
+            <input type="text" id="date" name="date" placeholder="eg. 21-11-2000">
+            <button type="submit" class="btn btn-success btn-lg">Search</button>
+        </form>
+        <h1 style="color:cyan">Tax Information</h1>
+        <% for(var i=0;i<details.length;i++){ %>
+        <ul>
+            
+                <li>Tax ID---><%= details[i].tax_id %></li>
+                <li>Person ID---><%= details[i].person_id %></li>
+                <li>Tax Amount---><%= details[i].tax_amt %></li>
+                <li>ITR date---><%= details[i].ITR_date %></li>
+                <li>Annual Total Income---><%= details[i].ann_tot_inc %></li>
+                <li>Tax Percentage---><%= details[i].tax_per %></li>
+                <li>Income After Tax---><%= details[i].inc_afr_tax %></li>
+            
+       </ul>
+       <% } %>
+       <div>Go Back To <a href="/index_2">Previous Page</a></div>
+       <div>Go Back To <a href="/">Home</a></div>
+    </body>
+</html>
